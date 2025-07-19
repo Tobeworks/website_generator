@@ -12,7 +12,7 @@ const generatedConfig = {
         subheadline: "Erstelle beeindruckende Landingpages in Minuten, nicht Monaten.",
         cta_button: "Jetzt starten",
         button_link: "/start",
-        image_url: "/default_hero.jpg" // Optional, will use fallback if not provided
+        image_url: "/default_hero.jpg"
       }
     },
     {
@@ -20,26 +20,65 @@ const generatedConfig = {
       data: {
         title: "Warum du uns lieben wirst",
         features: [
-          {
-            icon: "🚀",
-            title: "Blitzschnell",
-            description: "Von der Idee zur fertigen Seite in unter 5 Minuten."
-          },
-          {
-            icon: "🎨",
-            title: "Wunderschöne Designs",
-            description: "Wähle aus einer Vielzahl von professionellen Vorlagen."
-          },
-          {
-            icon: "💸",
-            title: "Kosteneffizient",
-            description: "Spare tausende Euro an Entwicklungskosten."
-          }
+          { icon: "🚀", title: "Blitzschnell", description: "Von der Idee zur fertigen Seite in unter 5 Minuten." },
+          { icon: "🎨", title: "Wunderschöne Designs", description: "Wähle aus einer Vielzahl von professionellen Vorlagen." },
+          { icon: "💸", title: "Kosteneffizient", description: "Spare tausende Euro an Entwicklungskosten." }
+        ]
+      }
+    },
+    {
+      type: 'testimonials',
+      data: {
+        title: "Das sagen unsere Kunden",
+        testimonials: [
+          { text: "Dieses Tool hat unseren Workflow revolutioniert!", author: "Alex Meier", role: "CEO, TechCorp", avatar_url: "/avatars/alex.jpg" },
+          { text: "Noch nie war es so einfach, eine professionelle Seite zu erstellen.", author: "Julia Klein", role: "Marketing Lead, InnovateCo", avatar_url: "/avatars/julia.jpg" },
+          { text: "Absolut empfehlenswert für jedes Startup.", author: "Ben Schmidt", role: "Founder, Creative Solutions", avatar_url: "/avatars/ben.jpg" }
+        ]
+      }
+    },
+    {
+      type: 'pricing',
+      data: {
+        title: "Ein Plan für jede Anforderung",
+        plans: [
+          { name: "Starter", price: "€29", period: "Monat", features: ["1 Landingpage", "KI-Textgenerierung", "Standard-Support"], cta_button: "Wählen", cta_link: "/subscribe/starter" },
+          { name: "Pro", price: "€79", period: "Monat", features: ["10 Landingpages", "KI-Bildgenerierung", "Premium-Support", "Eigene Domain"], cta_button: "Wählen", cta_link: "/subscribe/pro", is_featured: true },
+          { name: "Enterprise", price: "Kontakt", period: "Jahr", features: ["Unbegrenzte Pages", "Dedizierter Support", "Team-Funktionen"], cta_button: "Anfragen", cta_link: "/contact" }
+        ]
+      }
+    },
+    {
+      type: 'faq',
+      data: {
+        title: "Häufig gestellte Fragen",
+        faqs: [
+          { question: "Kann ich meine eigene Domain verwenden?", answer: "Ja, ab dem Pro-Plan können Sie Ihre eigene Domain ganz einfach verbinden." },
+          { question: "Welche KI-Modelle werden verwendet?", answer: "Wir nutzen eine Kombination aus Google Gemini für Texte und DALL-E 3 für die Bildgenerierung, um beste Ergebnisse zu erzielen." },
+          { question: "Gibt es eine Geld-zurück-Garantie?", answer: "Ja, wir bieten eine 14-tägige Geld-zurück-Garantie auf alle unsere Pläne." }
+        ]
+      }
+    },
+    {
+      type: 'cta',
+      data: {
+        title: "Bereit, durchzustarten?",
+        subtitle: "Warte nicht länger. Verwandle deine Ideen noch heute in beeindruckende Landingpages.",
+        cta_button: "Erstelle deine Seite kostenlos",
+        button_link: "/signup"
+      }
+    },
+    {
+      type: 'footer',
+      data: {
+        company_name: "Tobeworks AI",
+        links: [
+          { text: "Impressum", href: "/imprint" },
+          { text: "Datenschutz", href: "/privacy" },
+          { text: "Kontakt", href: "/contact" }
         ]
       }
     }
-    // You can add more sections here, e.g.:
-    // { type: 'testimonials', data: { ... } }
   ]
 };
 ---

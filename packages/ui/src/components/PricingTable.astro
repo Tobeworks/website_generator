@@ -1,0 +1,53 @@
+---
+// packages/ui/src/components/PricingTable.astro
+interface Plan {
+  name: string;
+  price: string;
+  period: string;
+  features: string[];
+  cta_button: string;
+  cta_link: string;
+  is_featured?: boolean;
+}
+
+interface Props {
+  title: string;
+  plans: Plan[];
+}
+
+const { title, plans } = Astro.props;
+---
+
+<section class="py-16 px-4 bg-bg-base">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-12 text-center">{title}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {plans.map(plan => (
+        <div class:list={[
+          "p-8 rounded-lg shadow-lg flex flex-col",
+          plan.is_featured ? "bg-primary text-text-inverted scale-105" : "bg-bg-surface"
+        ]}>
+          <h3 class="text-2xl font-bold mb-2">{plan.name}</h3>
+          <p class="text-4xl font-extrabold mb-1">{plan.price}</p>
+          <p class:list={["mb-6", plan.is_featured ? "text-text-inverted/70" : "text-text-muted"]}>/{plan.period}</p>
+          <ul class="space-y-3 mb-8 flex-grow">
+            {plan.features.map(feature => (
+              <li class="flex items-center">
+                <svg class:list={["w-5 h-5 mr-2", plan.is_featured ? "text-text-inverted" : "text-primary"]} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <a href={plan.cta_link} class:list={[
+            "text-center font-bold py-3 px-6 rounded-lg w-full block",
+            plan.is_featured 
+              ? "bg-text-inverted text-primary hover:bg-bg-muted"
+              : "bg-primary text-text-inverted hover:bg-primary/90"
+          ]}>
+            {plan.cta_button}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

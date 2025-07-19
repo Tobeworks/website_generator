@@ -1,1 +1,48 @@
-@import "tailwindcss";
+@theme {
+  --color-primary: hsl(var(--color-primary));
+  --color-secondary: hsl(var(--color-secondary));
+  --color-accent: hsl(var(--color-accent));
+
+  --color-text-base: hsl(var(--color-text-base));
+  --color-text-muted: hsl(var(--color-text-muted));
+  --color-text-inverted: hsl(var(--color-text-inverted));
+
+  --color-bg-base: hsl(var(--color-bg-base));
+  --color-bg-surface: hsl(var(--color-bg-surface));
+  --color-bg-muted: hsl(var(--color-bg-muted));
+}
+
+@layer base {
+  :root {
+    /* Using HSL values for easy theming */
+    --color-primary: 217 91% 60%; /* blue-500 */
+    --color-secondary: 240 5% 65%; /* slate-500 */
+    --color-accent: 258 90% 66%; /* violet-500 */
+
+    --color-text-base: 225 25% 9%; /* slate-900 */
+    --color-text-muted: 222 9% 47%; /* slate-500 */
+    --color-text-inverted: 0 0% 100%; /* white */
+
+    --color-bg-base: 0 0% 100%; /* white */
+    --color-bg-surface: 220 13% 96%; /* slate-100 */
+    --color-bg-muted: 220 14% 91%; /* slate-200 */
+  }
+
+  .dark {
+    --color-primary: 217 91% 60%;
+    --color-secondary: 240 5% 65%;
+    --color-accent: 258 90% 66%;
+
+    --color-text-base: 220 13% 96%;
+    --color-text-muted: 222 9% 47%;
+    --color-text-inverted: 225 25% 9%;
+
+    --color-bg-base: 225 25% 9%;
+    --color-bg-surface: 222 12% 18%;
+    --color-bg-muted: 221 10% 28%;
+  }
+
+  body {
+    @apply bg-bg-base text-text-base;
+  }
+}

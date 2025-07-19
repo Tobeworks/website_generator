@@ -17,17 +17,17 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative h-[70vh] text-white">
+<section class="relative h-[70vh] text-text-inverted">
   <img 
     src={image_url} 
     alt="Hero Background" 
     class="absolute inset-0 w-full h-full object-cover"
   />
-  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="absolute inset-0 bg-black/60"></div>
   <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
     <h1 class="text-5xl font-extrabold mb-4">{headline}</h1>
     <p class="text-xl mb-8">{subheadline}</p>
-    <a href={button_link} class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg">
+    <a href={button_link} class="bg-primary hover:bg-primary/90 text-text-inverted font-bold py-3 px-6 rounded-lg">
       {cta_button}
     </a>
   </div>

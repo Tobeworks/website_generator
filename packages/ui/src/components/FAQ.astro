@@ -1,0 +1,30 @@
+---
+// packages/ui/src/components/FAQ.astro
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  faqs: FaqItem[];
+}
+
+const { title, faqs } = Astro.props;
+---
+
+<section class="py-16 px-4 bg-bg-surface">
+  <div class="container mx-auto max-w-3xl">
+    <h2 class="text-3xl font-bold mb-8 text-center">{title}</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <details class="p-4 bg-bg-base rounded-lg shadow-md cursor-pointer">
+          <summary class="font-semibold text-lg">{faq.question}</summary>
+          <p class="mt-2 text-text-muted">
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

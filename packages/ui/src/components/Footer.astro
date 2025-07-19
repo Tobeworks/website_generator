@@ -1,0 +1,32 @@
+---
+// packages/ui/src/components/Footer.astro
+interface Link {
+  text: string;
+  href: string;
+}
+
+interface Props {
+  company_name: string;
+  links: Link[];
+  social_links?: {
+    twitter?: string;
+    github?: string;
+    linkedin?: string;
+  }
+}
+
+const { company_name, links, social_links } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-bg-muted text-text-base py-8 px-4">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+    <p>&copy; {currentYear} {company_name}. All rights reserved.</p>
+    <nav class="flex gap-6 mt-4 md:mt-0">
+      {links.map(link => (
+        <a href={link.href} class="hover:text-primary">{link.text}</a>
+      ))}
+    </nav>
+    <!-- Optional: Social Links can be added here -->
+  </div>
+</footer>

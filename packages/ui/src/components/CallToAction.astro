@@ -1,0 +1,21 @@
+---
+// packages/ui/src/components/CallToAction.astro
+interface Props {
+  title: string;
+  subtitle: string;
+  cta_button: string;
+  button_link: string;
+}
+
+const { title, subtitle, cta_button, button_link } = Astro.props;
+---
+
+<section class="py-20 px-4 bg-primary text-text-inverted">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-4">{title}</h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">{subtitle}</p>
+    <a href={button_link} class="bg-text-inverted hover:bg-bg-muted text-primary font-bold py-4 px-8 rounded-lg text-lg">
+      {cta_button}
+    </a>
+  </div>
+</section>
