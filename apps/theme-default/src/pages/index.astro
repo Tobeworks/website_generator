@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionRenderer from '../components/SectionRenderer.astro';
+
+// This object simulates the structured JSON you would get from your API
+const generatedConfig = {
+  sections: [
+    {
+      type: 'hero',
+      data: {
+        headline: "Dein nächstes Projekt, angetrieben durch KI",
+        subheadline: "Erstelle beeindruckende Landingpages in Minuten, nicht Monaten.",
+        cta_button: "Jetzt starten",
+        button_link: "/start",
+        image_url: "/default_hero.jpg" // Optional, will use fallback if not provided
+      }
+    },
+    {
+      type: 'features',
+      data: {
+        title: "Warum du uns lieben wirst",
+        features: [
+          {
+            icon: "🚀",
+            title: "Blitzschnell",
+            description: "Von der Idee zur fertigen Seite in unter 5 Minuten."
+          },
+          {
+            icon: "🎨",
+            title: "Wunderschöne Designs",
+            description: "Wähle aus einer Vielzahl von professionellen Vorlagen."
+          },
+          {
+            icon: "💸",
+            title: "Kosteneffizient",
+            description: "Spare tausende Euro an Entwicklungskosten."
+          }
+        ]
+      }
+    }
+    // You can add more sections here, e.g.:
+    // { type: 'testimonials', data: { ... } }
+  ]
+};
+---
+
+<Layout title="AI Landing Page">
+  <main>
+    <SectionRenderer sections={generatedConfig.sections} />
+  </main>
+</Layout>

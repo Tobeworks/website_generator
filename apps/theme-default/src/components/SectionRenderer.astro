@@ -1,0 +1,31 @@
+---
+// apps/theme-default/src/components/SectionRenderer.astro
+import Hero from "@tobeworks/ui/components/Hero.astro";
+import Features from "@tobeworks/ui/components/Features.astro";
+
+// Map section types from the API to actual Astro components
+const components = {
+  hero: Hero,
+  features: Features,
+  // Add other components here as you create them
+  // e.g., testimonials: Testimonials,
+};
+
+interface Section {
+  type: keyof typeof components;
+  data: Record<string, any>;
+}
+
+interface Props {
+  sections: Section[];
+}
+
+const { sections } = Astro.props;
+---
+
+{sections.map(section => {
+  const Component = components[section.type];
+  // Render the component only if it exists in our map
+  // Pass all its data as props
+  return Component ? <Component {...section.data} /> : null;
+})}
